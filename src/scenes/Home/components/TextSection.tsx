@@ -22,9 +22,9 @@ export default function TextSection({title, subtitle, paragraph, ctaButtonText, 
         {paragraph}
       </Text>
 
-    <Pressable>
+    <Pressable onPress={ctaButtonOnclick}>
       <Text style={styles.ctaButton}>
-        Zobacz więcej
+        {ctaButtonText}
       </Text>
     </Pressable>
   </View>
