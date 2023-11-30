@@ -50,7 +50,7 @@ export const addPost = async (postData: CreatePost): Promise<Post> => {
   return response.json();
 };
 
-export const deletePostById = async (id: number): Promise<void> => {
+export const deletePost = async (id: number): Promise<void> => {
   const response = await fetch(`${API_URL}/${id}`, {
     method: 'DELETE',
     headers: DEFAULT_HEADERS,

@@ -22,8 +22,8 @@ export default function TextSection({
       </View>
       <Text style={styles.paragraph}>{paragraph}</Text>
 
-      <Pressable onPress={ctaButtonOnclick}>
-        <Text style={styles.ctaButton}>{ctaButtonText}</Text>
+      <Pressable style={styles.ctaButton} onPress={ctaButtonOnclick}>
+        <Text style={styles.ctaButtonText}>{ctaButtonText}</Text>
       </Pressable>
     </View>
   );
@@ -61,6 +61,8 @@ const styles = StyleSheet.create({
     borderColor: '#219EF9',
     paddingVertical: 16,
     paddingHorizontal: 24,
+  },
+  ctaButtonText: {
     textAlign: 'center',
     color: '#219EF9',
     fontWeight: '700',

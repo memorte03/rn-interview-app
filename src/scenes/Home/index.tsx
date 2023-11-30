@@ -1,11 +1,3 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
-
-import type {PropsWithChildren} from 'react';
 import React from 'react';
 import {
   Image,
@@ -15,10 +7,13 @@ import {
   StyleSheet,
   Text,
 } from 'react-native';
+import type {NativeStackScreenProps} from '@react-navigation/native-stack';
 
 import TextSection from './components/TextSection';
 
-function HomeScreen({navigation}): JSX.Element {
+type Props = NativeStackScreenProps<RootStackParamList, 'Home'>;
+
+function HomeScreen({navigation}: Props): JSX.Element {
   const handleNavigateToPosts = () => {
     navigation.navigate('Posts');
   };
