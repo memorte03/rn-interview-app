@@ -1,13 +1,13 @@
-import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { Text, View } from "react-native";
+import {Text, View} from 'react-native';
+import {NavigationContainer} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+
 import HomeScreen from '../scenes/Home/index';
-import Posts from "../scenes/Posts";
-import AddPost from "../scenes/Posts/AddPost";
-import PostDetails from "../scenes/Posts/PostDetails";
+import Posts from '../scenes/Posts';
+import AddPost from '../scenes/Posts/AddPost';
+import PostDetails from '../scenes/Posts/PostDetails';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
-
 
 export default function Navigator() {
   return (
@@ -19,5 +19,5 @@ export default function Navigator() {
         <Stack.Screen name="AddPost" component={AddPost} />
       </Stack.Navigator>
     </NavigationContainer>
-  )
+  );
 }

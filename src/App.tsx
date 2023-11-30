@@ -5,8 +5,8 @@
  * @format
  */
 
-import React from 'react';
 import type {PropsWithChildren} from 'react';
+import React from 'react';
 import {
   Image,
   ImageBackground,
@@ -19,9 +19,9 @@ import {
   useColorScheme,
   View,
 } from 'react-native';
+
 import Navigator from './navigation/Navigator';
 import Providers from './providers';
-
 
 function App(): JSX.Element {
   return (

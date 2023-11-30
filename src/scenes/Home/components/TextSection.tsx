@@ -1,34 +1,32 @@
-import { Pressable, StyleSheet, Text, View } from "react-native";
+import {Pressable, StyleSheet, Text, View} from 'react-native';
 
-interface Props {
-  title: string,
-  subtitle: string,
-  paragraph: string,
-  ctaButtonText: string,
+type Props = {
+  title: string;
+  subtitle: string;
+  paragraph: string;
+  ctaButtonText: string;
   ctaButtonOnclick: () => void;
-}
-export default function TextSection({title, subtitle, paragraph, ctaButtonText, ctaButtonOnclick}: Props) {
+};
+export default function TextSection({
+  title,
+  subtitle,
+  paragraph,
+  ctaButtonText,
+  ctaButtonOnclick,
+}: Props) {
   return (
     <View style={styles.section}>
-    <View style={styles.headerContainer}>
-      <Text style={styles.header}>
-        {title}
-      </Text>
-      <Text style={styles.subtitle}>
-        {subtitle}
-      </Text>
-    </View>
-      <Text style={styles.paragraph}>
-        {paragraph}
-      </Text>
+      <View style={styles.headerContainer}>
+        <Text style={styles.header}>{title}</Text>
+        <Text style={styles.subtitle}>{subtitle}</Text>
+      </View>
+      <Text style={styles.paragraph}>{paragraph}</Text>
 
-    <Pressable onPress={ctaButtonOnclick}>
-      <Text style={styles.ctaButton}>
-        {ctaButtonText}
-      </Text>
-    </Pressable>
-  </View>
-  )
+      <Pressable onPress={ctaButtonOnclick}>
+        <Text style={styles.ctaButton}>{ctaButtonText}</Text>
+      </Pressable>
+    </View>
+  );
 }
 
 const styles = StyleSheet.create({
@@ -36,10 +34,10 @@ const styles = StyleSheet.create({
     marginBottom: 32,
   },
   header: {
-    textTransform: "uppercase",
+    textTransform: 'uppercase',
     fontSize: 32,
     fontWeight: '700',
-    textAlign: 'center'
+    textAlign: 'center',
   },
   section: {
     paddingVertical: 64,
@@ -47,10 +45,10 @@ const styles = StyleSheet.create({
   },
   subtitle: {
     fontSize: 18,
-    textTransform: "uppercase",
+    textTransform: 'uppercase',
     textAlign: 'center',
     fontWeight: '600',
-    color: '#219EF9'
+    color: '#219EF9',
   },
   paragraph: {
     fontSize: 16,
@@ -66,6 +64,6 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     color: '#219EF9',
     fontWeight: '700',
-    textTransform: "uppercase"
-  }
+    textTransform: 'uppercase',
+  },
 });

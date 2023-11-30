@@ -1,13 +1,17 @@
-import { useQuery } from "@tanstack/react-query";
-import { ScrollView, StyleSheet, Text } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
-import { fetchPost } from "../../../api";
-import { NativeStackScreenProps } from "@react-navigation/native-stack";
+import {ScrollView, StyleSheet, Text} from 'react-native';
+import {SafeAreaView} from 'react-native-safe-area-context';
+import type {NativeStackScreenProps} from '@react-navigation/native-stack';
+import {useQuery} from '@tanstack/react-query';
 
-type Props = NativeStackScreenProps<RootStackParamList, 'PostDetails'>
+import {fetchPost} from '../../../api';
 
-export default function PostDetails({ navigation, route }:Props) {
-  const { data, isLoading, error } = useQuery({queryKey: ['post'], queryFn: () => fetchPost(route.params.params.id)});
+type Props = NativeStackScreenProps<RootStackParamList, 'PostDetails'>;
+
+export default function PostDetails({navigation, route}: Props) {
+  const {data, isLoading, error} = useQuery({
+    queryKey: ['post'],
+    queryFn: () => fetchPost(route.params.params.id),
+  });
 
   if (isLoading) return <Text>Loading...</Text>;
   if (error) return <Text>Error: {error.message}</Text>;
@@ -15,18 +19,12 @@ export default function PostDetails({ navigation, route }:Props) {
   return (
     <SafeAreaView>
       <ScrollView>
-        <Text style={styles.title} >
-          {data?.title}
-        </Text>
-        <Text style={styles.date} >
-          {data?.createdAt}
-        </Text>
-        <Text>
-          {data?.description}
-        </Text>
+        <Text style={styles.title}>{data?.title}</Text>
+        <Text style={styles.date}>{data?.createdAt}</Text>
+        <Text>{data?.description}</Text>
       </ScrollView>
     </SafeAreaView>
-  )
+  );
 }
 
 const styles = StyleSheet.create({
@@ -36,6 +34,6 @@ const styles = StyleSheet.create({
   },
   date: {
     fontSize: 16,
-    color: '#5E5E5E'
-  }
-})
+    color: '#5E5E5E',
+  },
+});
