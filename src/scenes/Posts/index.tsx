@@ -55,7 +55,7 @@ export default function Posts({navigation}: Props) {
   };
 
   const handleNavigateToDetails = (id: number) => {
-    navigation.navigate('PostDetails', {params: {id}});
+    navigation.navigate('PostDetails', {id});
   };
 
   if (isLoading) return <Text>Loading...</Text>;

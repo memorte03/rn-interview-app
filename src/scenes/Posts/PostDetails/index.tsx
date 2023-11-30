@@ -10,7 +10,7 @@ type Props = NativeStackScreenProps<RootStackParamList, 'PostDetails'>;
 export default function PostDetails({navigation, route}: Props) {
   const {data, isLoading, error} = useQuery({
     queryKey: ['post'],
-    queryFn: () => fetchPost(route.params.params.id),
+    queryFn: () => fetchPost(route.params.id),
   });
 
   if (isLoading) return <Text>Loading...</Text>;
